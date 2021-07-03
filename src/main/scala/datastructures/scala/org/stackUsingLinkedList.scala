@@ -1,4 +1,3 @@
-package DataStructures
 package datastructures.scala.org
 
 /**
