@@ -2,34 +2,34 @@
 Data Structures in scala
 ---------------------------------------------------
 
-binarySearchTreeUsingRecursiveMethod.scala
+1. binarySearchTreeUsingRecursiveMethod.scala
 
-binaryTreeUsingIterativeMethod.scala
+2. binaryTreeUsingIterativeMethod.scala
 
-convertBinarySearchTreeToBalanceBinarySearchTre.scala 
+3. convertBinarySearchTreeToBalanceBinarySearchTre.scala 
 
-detectLoopAndCountNodeInLinkedList.scala 
+4. detectLoopAndCountNodeInLinkedList.scala 
 
-doublyLinkedList.scala
+5. doublyLinkedList.scala
 
-graphBFSandDFSImplementation.scala
+6. graphBFSandDFSImplementation.scala
 
-intersectionPointOfTwoLinkedList.scala
+7. intersectionPointOfTwoLinkedList.scala
 
-queueImplementation.scala
+8. queueImplementation.scala
 
-queueUsingLinkedList.scala
+9. queueUsingLinkedList.scala
 
-queueUsingTwoStack.scala
+10. queueUsingTwoStack.scala
 
-removeDuplicateFromLinkedList.scala
+11. removeDuplicateFromLinkedList.scala
 
-singlyLinkedList.scala
+12. singlyLinkedList.scala
 
-stackUsingTwoQueue.scala
+13. stackUsingTwoQueue.scala
 
-treeTraversal.scala
+14. treeTraversal.scala
 
-stackImplementation.scala
+15. stackImplementation.scala
 
-stackUsingLinkedList.scala
+16. stackUsingLinkedList.scala
