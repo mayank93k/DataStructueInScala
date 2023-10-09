@@ -282,7 +282,7 @@ class singlyLinkedList {
     *
     * @param key -> Data which needs to checked for no of times repetition
     */
-  def countDupliNode(key: Int): Unit = {
+  def countDuplicateNode(key: Int): Unit = {
     var temp = head
     var count = 0
     while (temp != null) {
@@ -383,7 +383,7 @@ object singlyLinkedList {
     println("\n")
 
     println("::::::: Count duplicate element in the linked list :::::::")
-    singlyLinkedList.countDupliNode(21)
+    singlyLinkedList.countDuplicateNode(21)
     println("\n")
 
     println("::::::: The reverse linked list is: :::::::")
