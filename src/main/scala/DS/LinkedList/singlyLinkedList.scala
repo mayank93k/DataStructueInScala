@@ -74,6 +74,7 @@ class singlyLinkedList {
       last = last.Next
     }
     last.Next = new_Node
+    new_Node.Next = null
   }
 
   /**
@@ -127,7 +128,7 @@ class singlyLinkedList {
   }
 
   /**
-    * Delete the given  element of the linked list, i.e., key node of the linked list
+    * Delete the given element of the linked list, i.e., key node of the linked list
     *
     * @param key -> Element to be deleted
     */
