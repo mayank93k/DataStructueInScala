@@ -10,8 +10,8 @@ package datastructures.scala.org
   * In a stack we remove the item the most recently added where as in a queue, we remove the item the least recently added.
   */
 class queueImplementation {
-  var front: Int = -1 // No element in Queue
-  var rear: Int = -1 // No element in Queue
+  private var front: Int = -1 // No element in Queue
+  private var rear: Int = -1 // No element in Queue
   var n = 5 // Size of Queue
   var queue: Array[Int] = new Array[Int](n) // empty array
 
@@ -27,11 +27,11 @@ class queueImplementation {
     *
     * @return true or false
     */
-  def isFull(): Boolean = {
+  private def isFull: Boolean = {
     if (rear == n - 1) {
-      return true
+       true
     } else {
-      return false
+       false
     }
   }
 
@@ -39,7 +39,7 @@ class queueImplementation {
     * Return size of Queue
     */
   def size(): Unit = {
-    val a = queue.size
+    val a = queue.length
     println("Size of queue is: " + a)
   }
 
@@ -48,11 +48,11 @@ class queueImplementation {
     *
     * @return true or false
     */
-  def isEmpty(): Boolean = {
+  def isEmpty: Boolean = {
     if (front < -1 || front > rear) {
-      return true
+       true
     } else {
-      return false
+       false
     }
   }
 
@@ -96,6 +96,8 @@ object queueImplementation {
     println("What is the size of the Queue?")
     queue.size()
     println("")
+
+    println("Is Empty Check: " + queue.isEmpty)
 
     println("::::::: Inserting element in Queue :::::::")
     queue.enqueue(5)
