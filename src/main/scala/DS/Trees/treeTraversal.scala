@@ -1,7 +1,7 @@
-package datastructures.scala.org
+package DataStructures
+package DS.Trees
 
 import java.util.{LinkedList, Queue}
-
 import scala.collection.mutable.Stack
 import scala.util.control.Breaks
 

@@ -1,4 +1,5 @@
-package datastructures.scala.org
+package DataStructures
+package DS.Graph
 
 import scala.collection.mutable
 import scala.collection.mutable.{ArrayBuffer, Stack}

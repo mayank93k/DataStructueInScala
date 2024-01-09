@@ -1,6 +1,7 @@
-package datastructures.scala.org
+package DataStructures
+package DS.Stack
 
-import scala.collection.mutable.Queue
+import scala.collection.mutable
 
 /**
   * About: StackUsingTwoQueue
@@ -23,8 +24,8 @@ import scala.collection.mutable.Queue
   */
 class stackUsingTwoQueue {
   /* Stack Implementation using 2 queue*/
-  var q1: Queue[Int] = new Queue[Int]()
-  var q2: Queue[Int] = new Queue[Int]()
+  var q1: mutable.Queue[Int] = new mutable.Queue[Int]()
+  private var q2: mutable.Queue[Int] = new mutable.Queue[Int]()
 
   /**
     * This method Inserts the data into Queue
@@ -42,12 +43,12 @@ class stackUsingTwoQueue {
     */
   def dequeue(): Unit = {
     while (q1.length > 1) {
-      var top = q1.dequeue()
+      val top = q1.dequeue()
       q2.enqueue(top)
     }
     println(q1.head)
     q1.dequeue()
-    var temp = q1
+    val temp = q1
     q1 = q2
     q2 = temp
   }

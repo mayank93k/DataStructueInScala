@@ -1,4 +1,5 @@
-package datastructures.scala.org
+package DataStructures
+package DS.Trees
 
 /**
   * About: Binary Search Tree (Implemented using recursive method)
@@ -51,7 +52,7 @@ class binarySearchTreeUsingRecursiveMethod {
     *
     * @param root -> Data to be Inserted
     */
-  def postOrder(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
+  private def postOrder(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
     if (root == null)
       return root
     postOrder(root.left)
@@ -96,7 +97,7 @@ class binarySearchTreeUsingRecursiveMethod {
       search(root.right, key)
     else
       "Yes"
-  }
+   }
 
   /**
     * This method fetches the maximum key in the node
@@ -104,7 +105,7 @@ class binarySearchTreeUsingRecursiveMethod {
     * @param root -> Root of the tree
     * @return -> Return the maximum element
     */
-  def maximumKey(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
+  private def maximumKey(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
     var max: Node = root
     while (max.right != null) {
       max = max.right

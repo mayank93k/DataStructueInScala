@@ -1,4 +1,5 @@
-package datastructures.scala.org
+package DataStructures
+package DS.Queue
 
 /**
   * About:QueueUsingLinkedList
@@ -12,11 +13,11 @@ package datastructures.scala.org
   * In linked list implementation of a queue, the last inserted node is always pointed by 'rear' and the first node is always pointed by 'front'.
   */
 class queueUsingLinkedList {
-  var head: Node = _ // creating head of linked list and assigning its value as null
+  var head: Node = _ // Creating head of linked list and assigning its value as null
 
   // This class Node creates the Node and its takes the int type of values
   class Node(var data: Int) {
-    var next: Node = _ // creating link which points to the next address of the current node
+    var next: Node = _ // Creating link which points to the next address of the current node
   }
 
   /**

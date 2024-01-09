@@ -1,4 +1,5 @@
-package datastructures.scala.org
+package DataStructures
+package DS.Queue
 
 /**
   * About: Queue Implementation

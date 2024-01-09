@@ -1,5 +1,7 @@
-package datastructures.scala.org
+package DataStructures
+package DS.Queue
 
+import scala.collection.mutable
 import scala.collection.mutable.Stack
 
 /**
@@ -25,7 +27,7 @@ import scala.collection.mutable.Stack
   */
 class queueUsingTwoStack {
   /* Queue Implementation using 2 stacks*/
-  var s1: Stack[Int] = new Stack[Int]()
+  var s1: mutable.Stack[Int] = new Stack[Int]()
   var s2: Stack[Int] = new Stack[Int]()
 
   /**

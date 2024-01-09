@@ -1,4 +1,5 @@
-package datastructures.scala.org
+package DataStructures
+package DS.Trees
 
 class convertBinarySearchTreeToBalanceBinarySearchTree {
   var root: Node = _ // creating root of tree and assigning its value as null

@@ -1,4 +1,5 @@
-package datastructures.scala.org
+package DataStructures
+package DS.LinkedList
 
 import scala.collection.mutable.HashSet
 

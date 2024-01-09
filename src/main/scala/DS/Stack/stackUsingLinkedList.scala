@@ -1,23 +1,27 @@
-package datastructures.scala.org
+package DataStructures
+package DS.Stack
 
 /**
   * About: StackUsingLinkedList
   *
   * A stack can be easily implemented through the linked list.
-  * In stack Implementation, a stack contains a top pointer. which is “head” of the stack where pushing and popping items
-  * happens at the head of the list. first node have null in link field and second node link have first node address in link field
-  * and so on.
+  * In stack Implementation, a stack contains a top pointer which is “head” of the stack where pushing and popping items
+  * happens at the head of the list.
+  *
+  * First node have null in link field and second node link have first node address in link field and so on.
   *
   * The main advantage of using linked list over an arrays is that it is possible to implements a stack that
-  * can shrink or grow as much as needed. In using array will put a restriction to the maximum capacity of the
-  * array which can lead to stack overflow. Here each new node will be dynamically allocate. so overflow is not possible.
+  * can shrink or grow as much as needed.
+  *
+  * In using array will put a restriction to the maximum capacity of the array which can lead to stack overflow.
+  * Here each new node will be dynamically allocate. so overflow is not possible.
   */
 class stackUsingLinkedList {
-  var head: Node = _ // creating head of linked list and assigning its value as null
+  var head: Node = _ // Creating head of linked list and assigning its value as null
 
   // This class Node creates the Node and its takes the int type of values
   class Node(var data: Int) {
-    var next: Node = _ // creating link which points to the next address of the current node
+    var next: Node = _ // Creating link which points to the next address of the current node
   }
 
   /**
