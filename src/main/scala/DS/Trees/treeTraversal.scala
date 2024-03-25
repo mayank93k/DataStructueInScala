@@ -1,7 +1,7 @@
 package DataStructures
 package DS.Trees
 
-import java.util.{LinkedList, Queue}
+import java.util
 import scala.collection.mutable.Stack
 import scala.util.control.Breaks
 
@@ -17,12 +17,6 @@ import scala.util.control.Breaks
 class treeTraversal {
   var root: Node = _ // creating root of tree and assigning its value as null
 
-  // This class Tree Node creates the Node and its takes the int type of values
-  class Node(var data: Int) {
-    var left: Node = _ // creating link which points to the left address of the left node
-    var right: Node = _ // creating link which points to the right address of the right node
-  }
-
   /**
     * This method insert a new key in Binary Tree
     *
@@ -36,7 +30,7 @@ class treeTraversal {
       return new Node(key)
     } else {
       var temp: Node = root
-      val queue: Queue[Node] = new LinkedList[Node]()
+      val queue: util.Queue[Node] = new util.LinkedList[Node]()
       queue.add(temp)
       loop1.breakable {
         while (!queue.isEmpty) {
@@ -107,7 +101,7 @@ class treeTraversal {
     if (node == null) {
       return null
     }
-    val q1: Queue[Node] = new LinkedList[Node]()
+    val q1: util.Queue[Node] = new util.LinkedList[Node]()
     q1.add(root)
     q1.add(null)
     while (!q1.isEmpty) {
@@ -141,7 +135,7 @@ class treeTraversal {
     if (node == null) {
       return null
     }
-    val q1: Queue[Node] = new LinkedList[Node]()
+    val q1: util.Queue[Node] = new util.LinkedList[Node]()
     q1.add(node)
     while (!q1.isEmpty) {
       val temp: Node = q1.poll()
@@ -168,7 +162,7 @@ class treeTraversal {
     if (node == null) {
       return null
     }
-    val q1: Queue[Node] = new LinkedList[Node]()
+    val q1: util.Queue[Node] = new util.LinkedList[Node]()
     q1.add(node)
     while (!q1.isEmpty) {
       val temp: Node = q1.poll()
@@ -186,10 +180,17 @@ class treeTraversal {
     }
     node
   }
+
+  // This class Tree Node creates the Node and its takes the int type of values
+  class Node(var data: Int) {
+    var left: Node = _ // creating link which points to the left address of the left node
+    var right: Node = _ // creating link which points to the right address of the right node
+  }
 }
-  object treeTraversal {
+
+object treeTraversal {
   def main(args: Array[String]): Unit = {
-    val treeTraversal =new treeTraversal
+    val treeTraversal = new treeTraversal
     val keys = Array(1, 2, 3, 7, 6, 5, 4)
     for (key <- keys) {
       treeTraversal.root = treeTraversal.insert(treeTraversal.root, key)
