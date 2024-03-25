@@ -18,13 +18,7 @@ class stackImplementation {
   /**
     * Check stack is empty or not(Initially position of top is at -1 when no elements is there)
     */
-  def isEmpty(): Unit = {
-    if (top == -1) {
-      println("Stack Is empty")
-    } else {
-      println("Stack Is Not empty")
-    }
-  }
+  def isEmpty: Boolean = if (top == -1) true else false
 
   /**
     * Get top most element of the stack
@@ -79,7 +73,7 @@ object stackImplementation {
   def main(args: Array[String]): Unit = {
     val stack = new stackImplementation
     println("Check weather stack is empty or not?")
-    stack.isEmpty()
+    stack.isEmpty
     println("")
 
     println("::::::: Pushing element in stack :::::::")
@@ -87,7 +81,7 @@ object stackImplementation {
     println("")
 
     println("Check weather stack is empty or not?")
-    stack.isEmpty()
+    stack.isEmpty
     println("")
 
     println("::::::: Pushing element in stack :::::::")
