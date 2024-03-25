@@ -16,14 +16,6 @@ import scala.collection.mutable.{ArrayBuffer, Stack}
   */
 class graphBFSandDFSImplementation {
 
-  // This class Graph creates the Node and its takes the int type of values
-  class Graph(var V: Int) {
-    var adjListArray: ArrayBuffer[ArrayBuffer[Int]] = new ArrayBuffer[ArrayBuffer[Int]]
-    for (i <- 0 until V) {
-      adjListArray.insert(i, ArrayBuffer[Int]())
-    }
-  }
-
   /**
     * This method to add an edge into the graph
     *
@@ -63,13 +55,29 @@ class graphBFSandDFSImplementation {
   }
 
   /**
+    * The method to do DFS traversal. It uses recursive DFSUtil()
+    *
+    * @param v     -> No of Vertex
+    * @param graph -> Graph Node
+    */
+  def DFS(v: Int, graph: Graph): Unit = {
+    val visited: Array[Boolean] = new Array[Boolean](v)
+    for (i <- 0 until v)
+      visited(i) = false
+    for (i <- 0 until v)
+      if (!visited(i)) {
+        DFSUtil(i, visited, graph)
+      }
+  }
+
+  /**
     * This method is used by DFS
     *
     * @param i       -> Counter Variable
     * @param visited -> Array contains the visited node
     * @param graph   -> Graph Node
     */
-  def DFSUtil(i: Int, visited: Array[Boolean], graph: Graph): Unit = {
+  private def DFSUtil(i: Int, visited: Array[Boolean], graph: Graph): Unit = {
     val stack: Stack[Int] = new mutable.Stack[Int]()
     stack.push(i)
     while (stack.nonEmpty) {
@@ -91,22 +99,6 @@ class graphBFSandDFSImplementation {
   }
 
   /**
-    * The method to do DFS traversal. It uses recursive DFSUtil()
-    *
-    * @param v     -> No of Vertex
-    * @param graph -> Graph Node
-    */
-  def DFS(v: Int, graph: Graph): Unit = {
-    val visited: Array[Boolean] = new Array[Boolean](v)
-    for (i <- 0 until v)
-      visited(i) = false
-    for (i <- 0 until v)
-      if (!visited(i)) {
-        DFSUtil(i, visited, graph)
-      }
-  }
-
-  /**
     * This method is used to print all the nodes of the graph
     *
     * @param graph -> Graph Node
@@ -119,6 +111,14 @@ class graphBFSandDFSImplementation {
         print(" -> " + p)
       }
       println("\n")
+    }
+  }
+
+  // This class Graph creates the Node and its takes the int type of values
+  class Graph(var V: Int) {
+    var adjListArray: ArrayBuffer[ArrayBuffer[Int]] = new ArrayBuffer[ArrayBuffer[Int]]
+    for (i <- 0 until V) {
+      adjListArray.insert(i, ArrayBuffer[Int]())
     }
   }
 }
