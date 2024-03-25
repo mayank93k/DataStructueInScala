@@ -7,11 +7,6 @@ package DS.LinkedList
 class removeDuplicateFromLinkedList {
   var head: Node = _ // creating head of linked list and assigning its value as null
 
-  // This class Node creates the Node and its takes the int type of values
-  class Node(var data: Int) {
-    var Next: Node = _ // creating link which points to the next address of the current node
-  }
-
   /**
     * This method remove the duplicate element from the linked list
     *
@@ -49,6 +44,11 @@ class removeDuplicateFromLinkedList {
   def newNode(key: Int): removeDuplicateFromLinkedList.this.Node = {
     val temp = new Node(key)
     temp
+  }
+
+  // This class Node creates the Node and its takes the int type of values
+  class Node(var data: Int) {
+    var Next: Node = _ // creating link which points to the next address of the current node
   }
 }
 

@@ -9,14 +9,6 @@ import scala.util.control._
   * We have to find the intersection point of two Linked List(Common Node where two linked list meets each other)
   */
 class intersectionPointOfTwoLinkedList {
-  var head1: Node = _ // creating head1 of linked list1 and assigning its value as null
-  var head2: Node = _ // creating head2 of linked list2 and assigning its value as null
-
-  // This class Node creates the Node and its takes the int type of values
-  class Node(var data: Int) {
-    var Next: Node = _ // creating link which points to the next address of the current node
-  }
-
   /**
     * This method is used to find the intersectionPoint of Two linked list
     *
@@ -38,9 +30,9 @@ class intersectionPointOfTwoLinkedList {
       count2 += 1
       temp2 = temp2.Next
     }
-   // println("Second Count " + count2)
+    println("Second Count " + count2)
     val NodeDiff = count1 - count2
-   // println("Diff of Node " + NodeDiff)
+    println("Diff of Node " + NodeDiff)
 
     var temp = head1.Next
 
@@ -67,6 +59,11 @@ class intersectionPointOfTwoLinkedList {
   def newNode(key: Int): intersectionPointOfTwoLinkedList.this.Node = {
     val temp = new Node(key)
     temp
+  }
+
+  // This class Node creates the Node and its takes the int type of values
+  class Node(var data: Int) {
+    var Next: Node = _ // creating link which points to the next address of the current node
   }
 }
 

@@ -11,50 +11,27 @@ package DS.Queue
   * In a stack we remove the item the most recently added where as in a queue, we remove the item the least recently added.
   */
 class queueImplementation {
-  private var front: Int = -1 // No element in Queue
-  private var rear: Int = -1 // No element in Queue
   var n = 5 // Size of Queue
   var queue: Array[Int] = new Array[Int](n) // empty array
+  private var front: Int = -1 // No element in Queue
+  private var rear: Int = -1 // No element in Queue
 
   /**
     * Get top most element of the queue
     */
-  def peek(): Unit = {
-    println("Top element of queue is: " + queue(front + 1))
-  }
-
-  /**
-    * Check weather Queue is full or not.
-    *
-    * @return true or false
-    */
-  private def isFull: Boolean = {
-    if (rear == n - 1) {
-       true
-    } else {
-       false
-    }
+  def peek: Int = {
+    val peek = queue(front + 1)
+    println("Top element of queue is: " + peek)
+    peek
   }
 
   /**
     * Return size of Queue
     */
-  def size(): Unit = {
-    val a = queue.length
-    println("Size of queue is: " + a)
-  }
-
-  /**
-    * Check weather Queue is empty or not
-    *
-    * @return true or false
-    */
-  def isEmpty: Boolean = {
-    if (front < -1 || front > rear) {
-       true
-    } else {
-       false
-    }
+  def size: Int = {
+    val size = queue.length
+    println("Size of queue is: " + size)
+    size
   }
 
   /**
@@ -75,6 +52,19 @@ class queueImplementation {
   }
 
   /**
+    * Check weather Queue is full or not.
+    *
+    * @return true or false
+    */
+  private def isFull: Boolean = {
+    if (rear == n - 1) {
+      true
+    } else {
+      false
+    }
+  }
+
+  /**
     * This method deletes the data from Quw=eue from front end
     */
   def dequeue(): Unit = {
@@ -88,6 +78,19 @@ class queueImplementation {
       println("After dequeue front is at position: " + front)
     }
   }
+
+  /**
+    * Check weather Queue is empty or not
+    *
+    * @return true or false
+    */
+  def isEmpty: Boolean = {
+    if (front < -1 || front > rear) {
+      true
+    } else {
+      false
+    }
+  }
 }
 
 object queueImplementation {
@@ -95,7 +98,7 @@ object queueImplementation {
     val queue = new queueImplementation
 
     println("What is the size of the Queue?")
-    queue.size()
+    queue.size
     println("")
 
     println("Is Empty Check: " + queue.isEmpty)
@@ -121,7 +124,7 @@ object queueImplementation {
     println("")
 
     println("::::::: Top most element in Queue is? :::::::")
-    queue.peek()
+    queue.peek
     println("")
 
     println("::::::: Removing element from Queue :::::::")
@@ -129,6 +132,6 @@ object queueImplementation {
     println("")
 
     println("::::::: Top most element in Queue is? :::::::")
-    queue.peek()
+    queue.peek
   }
 }

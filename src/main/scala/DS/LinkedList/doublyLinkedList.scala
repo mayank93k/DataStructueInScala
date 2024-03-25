@@ -10,22 +10,15 @@ package DS.LinkedList
 class doublyLinkedList {
   var head: Node = _ // creating head of linked list and assigning its value as null
 
-  // This class Node creates the Node and its takes the int type of values
-  class Node(var data: Int) {
-    var next: Node = _ // creating link which points to the next address of the current node
-    var prev: Node = _ // creating link which points to the prev address of the current node
-  }
-
   /**
     * This method inserts the element at the front of linked list
     *
     * @param newData -> Data to be Inserted
     */
-  def insertFront(newData: Int): Unit = {
+  def insertFront(newData: Int): Node = {
     if (head == null) {
       println(newData)
       head = new Node(newData)
-      return head
     }
     println(newData)
     val newNode = new Node(newData)
@@ -33,6 +26,7 @@ class doublyLinkedList {
     head.prev = newNode
     newNode.prev = null
     head = newNode
+    head
   }
 
   /**
@@ -44,7 +38,6 @@ class doublyLinkedList {
     if (head == null) {
       println(newData)
       head = new Node(newData)
-      return head
     }
     var temp: Node = head
     while (temp.next != null) {
@@ -61,7 +54,7 @@ class doublyLinkedList {
     * This method insert element after a given Node
     *
     * @param prevNode -> Previous node Data
-    * @param newData -> Data to be Inserted
+    * @param newData  -> Data to be Inserted
     */
   def insertAfterGivenNode(prevNode: Node, newData: Int): Unit = {
     if (prevNode == null) {
@@ -148,7 +141,7 @@ class doublyLinkedList {
     */
   def search(key: Int): Unit = {
     if (head == null) {
-      return null
+      println("Head can't be null")
     }
     var temp = head
     while (temp != null) {
@@ -184,6 +177,12 @@ class doublyLinkedList {
       print(temp.data + " ")
       temp = temp.next
     }
+  }
+
+  // This class Node creates the Node and its takes the int type of values
+  class Node(var data: Int) {
+    var next: Node = _ // creating link which points to the next address of the current node
+    var prev: Node = _ // creating link which points to the prev address of the current node
   }
 }
 
@@ -236,7 +235,7 @@ object doublyLinkedList {
     doublyLinkedList.printDoublyLinkedList()
     println("\n")
     println("::::::: Printing an element linked list in reverse order :::::::")
-   doublyLinkedList.printDoublyLinkedListInReverse()
+    doublyLinkedList.printDoublyLinkedListInReverse()
     println("\n")
     println("::::::: Searching an element linked list :::::::")
     doublyLinkedList.search(25)

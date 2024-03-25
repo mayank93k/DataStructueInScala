@@ -13,26 +13,21 @@ package DS.LinkedList
 class singlyLinkedList {
   var head: Node = _ // creating head of linked list and assigning its value as null
 
-  // This class Node creates the Node and its takes the int type of values
-  class Node(var data: Int) {
-    var Next: Node = _ // creating link which points to the next address of the current node
-  }
-
   /**
     * Insert the data at front of the linked list
     *
     * @param new_data -> Data to be Inserted
     */
-  def pushFront(new_data: Int): Unit = {
+  def pushFront(new_data: Int): Node = {
     if (head == null) {
       println(new_data)
       head = new Node(new_data)
-      return
     }
     println(new_data)
     val new_Node = new Node(new_data)
     new_Node.Next = head
     head = new_Node
+    head
   }
 
   /**
@@ -294,6 +289,11 @@ class singlyLinkedList {
       temp = temp.Next
     }
     println("The key element " + key + " which is repeated " + count + " times")
+  }
+
+  // This class Node creates the Node and its takes the int type of values
+  class Node(var data: Int) {
+    var Next: Node = _ // creating link which points to the next address of the current node
   }
 }
 

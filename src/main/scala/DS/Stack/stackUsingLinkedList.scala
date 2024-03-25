@@ -19,11 +19,6 @@ package DS.Stack
 class stackUsingLinkedList {
   var head: Node = _ // Creating head of linked list and assigning its value as null
 
-  // This class Node creates the Node and its takes the int type of values
-  class Node(var data: Int) {
-    var next: Node = _ // Creating link which points to the next address of the current node
-  }
-
   /**
     * Push element in stack using linked list i.e., element is always inserted from front of the linked list
     *
@@ -58,6 +53,11 @@ class stackUsingLinkedList {
       temp = temp.next
     }
   }
+
+  // This class Node creates the Node and its takes the int type of values
+  class Node(var data: Int) {
+    var next: Node = _ // Creating link which points to the next address of the current node
+  }
 }
 
 object stackUsingLinkedList {
@@ -78,7 +78,7 @@ object stackUsingLinkedList {
     println("::::::: Printing element in stack :::::::")
     stackLinkedList.printStack()
 
-    println("\n" +"::::::: Removing element from stack :::::::")
+    println("\n" + "::::::: Removing element from stack :::::::")
     stackLinkedList.popLinked()
 
     println("::::::: Pushing element in stack :::::::")

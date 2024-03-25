@@ -1,7 +1,7 @@
 package DataStructures
 package DS.LinkedList
 
-import scala.collection.mutable.HashSet
+import scala.collection.mutable
 
 /**
   * About: Detect loop and Count Node
@@ -11,11 +11,6 @@ import scala.collection.mutable.HashSet
 class detectLoopAndCountNodeInLinkedList {
   var head: Node = _ // creating head of linked list and assigning its value as null
 
-  // This class Node creates the Node and its takes the int type of values
-  class Node(var data: Int) {
-    var Next: Node = _ // creating link which points to the next address of the current node
-  }
-
   /**
     * This method checks if the linked list has loop or not
     *
@@ -23,7 +18,7 @@ class detectLoopAndCountNodeInLinkedList {
     * @return -> Returns true if loop exists else false
     */
   def checkLoop(head: Node): Boolean = {
-    val s1: HashSet[Node] = new HashSet[Node]
+    val s1: mutable.HashSet[Node] = new mutable.HashSet[Node]
     var temp = head
     while (temp != null) {
       if (s1.contains(temp)) {
@@ -32,7 +27,7 @@ class detectLoopAndCountNodeInLinkedList {
       s1.add(temp)
       temp = temp.Next
     }
-    return false
+    false
   }
 
   /**
@@ -91,6 +86,11 @@ class detectLoopAndCountNodeInLinkedList {
   def newNode(key: Int): detectLoopAndCountNodeInLinkedList.this.Node = {
     val temp = new Node(key)
     temp
+  }
+
+  // This class Node creates the Node and its takes the int type of values
+  class Node(var data: Int) {
+    var Next: Node = _ // creating link which points to the next address of the current node
   }
 }
 

@@ -45,21 +45,21 @@ class queueUsingTwoStack {
     * finally removes the top most element from S2.
     */
   def pop(): Unit = {
-    while (s1.length > 0) {
-      var top = s1.pop()
+    while (s1.nonEmpty) {
+      val top = s1.pop()
       s2.push(top)
     }
     println(s2.head)
     s2.pop()
 
-    for (i <- 0 to s2.length - 1) {
-      for (j <- i + 1 to s2.length - 1) {
-        var temp1 = s2(j)
+    for (i <- s2.indices) {
+      for (j <- i + 1 until s2.length) {
+        val temp1 = s2(j)
         s2(j) = s2(i)
         s2(i) = temp1
       }
     }
-    var temp = s1
+    val temp = s1
     s1 = s2
     s2 = temp
   }
