@@ -15,12 +15,6 @@ package DS.Trees
 class binarySearchTreeUsingRecursiveMethod {
   var root: Node = _ // creating root of tree and assigning its value as null
 
-  // This class Tree Node creates the Node and its takes the int type of values
-  class Node(var data: Int) {
-    var left: Node = _ // creating link which points to the left address of the left node
-    var right: Node = _ // creating link which points to the right address of the right node
-  }
-
   /**
     * This utility method to do inorder traversal of BST
     *
@@ -45,20 +39,6 @@ class binarySearchTreeUsingRecursiveMethod {
     println(root.data + " ")
     preOrder(root.left)
     preOrder(root.right)
-  }
-
-  /**
-    * This utility method to do postOrder traversal of BST
-    *
-    * @param root -> Data to be Inserted
-    */
-  private def postOrder(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
-    if (root == null)
-      return root
-    postOrder(root.left)
-    postOrder(root.right)
-    println(root.data + " ")
-    root
   }
 
   /**
@@ -97,20 +77,6 @@ class binarySearchTreeUsingRecursiveMethod {
       search(root.right, key)
     else
       "Yes"
-   }
-
-  /**
-    * This method fetches the maximum key in the node
-    *
-    * @param root -> Root of the tree
-    * @return -> Return the maximum element
-    */
-  private def maximumKey(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
-    var max: Node = root
-    while (max.right != null) {
-      max = max.right
-    }
-    max
   }
 
   /**
@@ -344,6 +310,40 @@ class binarySearchTreeUsingRecursiveMethod {
       count += (numberOfFullNodes(root.left) + numberOfFullNodes(root.right))
     }
     count
+  }
+
+  /**
+    * This utility method to do postOrder traversal of BST
+    *
+    * @param root -> Data to be Inserted
+    */
+  private def postOrder(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
+    if (root == null)
+      return root
+    postOrder(root.left)
+    postOrder(root.right)
+    println(root.data + " ")
+    root
+  }
+
+  /**
+    * This method fetches the maximum key in the node
+    *
+    * @param root -> Root of the tree
+    * @return -> Return the maximum element
+    */
+  private def maximumKey(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
+    var max: Node = root
+    while (max.right != null) {
+      max = max.right
+    }
+    max
+  }
+
+  // This class Tree Node creates the Node and its takes the int type of values
+  class Node(var data: Int) {
+    var left: Node = _ // creating link which points to the left address of the left node
+    var right: Node = _ // creating link which points to the right address of the right node
   }
 }
 

@@ -4,12 +4,6 @@ package DS.Trees
 class convertBinarySearchTreeToBalanceBinarySearchTree {
   var root: Node = _ // creating root of tree and assigning its value as null
 
-  // This class Tree Node creates the Node and its takes the int type of values
-  class Node(var data: Int) {
-    var left: Node = _ // creating link which points to the left address of the left node
-    var right: Node = _ // creating link which points to the right address of the right node
-  }
-
   /**
     * This utility method to do inorder traversal of BST
     *
@@ -75,6 +69,12 @@ class convertBinarySearchTreeToBalanceBinarySearchTree {
     node.left = convertBSTtoBalancedBST(nodes, start, mid - 1)
     node.right = convertBSTtoBalancedBST(nodes, mid + 1, end)
     node
+  }
+
+  // This class Tree Node creates the Node and its takes the int type of values
+  class Node(var data: Int) {
+    var left: Node = _ // creating link which points to the left address of the left node
+    var right: Node = _ // creating link which points to the right address of the right node
   }
 }
 
