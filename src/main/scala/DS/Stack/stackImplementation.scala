@@ -12,7 +12,7 @@ package DS.Stack
   */
 class stackImplementation {
   var top: Int = -1 // No element in the stack(Empty Stack)
-  var n: Int = 5 // size of stack is for 5 element(0,1,2,3,4 positions)(top=n-1 means 4=5-1 above this overflows)
+  var n: Int = 7 // size of stack is for 5 element(0,1,2,3,4 positions)(top=n-1 means 4=5-1 above this overflows)
   var a: Array[Int] = new Array[Int](n) // empty array
 
   /**
@@ -89,6 +89,10 @@ object stackImplementation {
     println("")
 
     println("::::::: Pushing element in stack :::::::")
+    stack.push(-1)
+    println("")
+
+    println("::::::: Pushing element in stack :::::::")
     stack.push(15)
     println("")
 
@@ -110,6 +114,17 @@ object stackImplementation {
 
     println("::::::: Top most element in stack :::::::")
     stack.peek()
+
+    println("::::::: Pushing element in stack :::::::")
+    stack.push(-7)
+    println("")
+
+    println("::::::: Top most element in stack :::::::")
+    stack.peek()
+
+    println("::::::: Remove (top) element in stack :::::::")
+    stack.pop()
+    println("")
   }
 }
 
