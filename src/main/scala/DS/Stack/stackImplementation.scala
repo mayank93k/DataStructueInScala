@@ -17,6 +17,7 @@ class stackImplementation {
   var n: Int = 7 // size of stack is for 5 element(0,1,2,3,4 positions)(top=n-1 means 4=5-1 above this overflows)
   var a: Array[Int] = new Array[Int](n) // empty array
   var min = 0
+  var max = 0
 
   /**
    * Check stack is empty or not(Initially position of top is at -1 when no elements is there)
@@ -50,9 +51,13 @@ class stackImplementation {
       top = top + 1
       println("After increment top by 1, top is at: " + top)
       a(top) = x
+
       if (min == 0 || min > x) min = x
+      if (min == 0 || max < x) max = x
+
       println("Element pushed into stack is:===> " + x)
       println("Minimum element in stack is:===> " + min)
+      println("Maximum element in stack is:===> " + max)
       println("After push top is at position: " + top + "\n")
     }
   }
@@ -71,10 +76,35 @@ class stackImplementation {
       if (min == a(top)) {
         minPopElement(top)
       }
+      if (max == a(top)) {
+        maxPopElement(top)
+      }
       println("Minimum element in stack is:===> " + min)
+      println("Maximum element in stack is:===> " + max)
       top = top - 1
       println("After pop top is at position: " + top + "\n")
     }
+  }
+
+  /**
+   * Find the maximum element in stack.
+   *
+   * @param xb : Top element in a stack
+   * @return
+   */
+  private def maxPopElement(xb: Int): Int = {
+    val i = 1
+    var x = xb
+    max = a(x - 1)
+    while (i < x) {
+      if (max < a(x)) {
+        x = x - 1
+        max = a(x)
+      } else {
+        x = x - 1
+      }
+    }
+    max
   }
 
   /**
