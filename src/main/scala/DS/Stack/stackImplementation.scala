@@ -77,6 +77,12 @@ class stackImplementation {
     }
   }
 
+  /**
+   * Find the minimum element in stack.
+   *
+   * @param xb : Top element in a stack
+   * @return
+   */
   private def minPopElement(xb: Int): Int = {
     val i = 1
     var x = xb
