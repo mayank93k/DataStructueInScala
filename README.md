@@ -1,4 +1,4 @@
-# Project : DataStructue_Scala
+# Project : Data Structures
     Data Structures in scala
 ---------------------------------------------------
 
