@@ -2,19 +2,19 @@ package DataStructures
 package DS.LinkedList
 
 /**
-  * About: Doubly Linked List
-  *
-  * A Doubly Linked List (DLL) contains an extra pointer, typically called previous pointer, together with next pointer and
-  * data which are there in singly linked list. A DLL can be traversed in both forward and backward direction.
-  */
+ * About: Doubly Linked List
+ *
+ * A Doubly Linked List (DLL) contains an extra pointer, typically called previous pointer, together with next pointer and
+ * data which are there in singly linked list. A DLL can be traversed in both forward and backward direction.
+ */
 class doublyLinkedList {
   var head: Node = _ // creating head of linked list and assigning its value as null
 
   /**
-    * This method inserts the element at the front of linked list
-    *
-    * @param newData -> Data to be Inserted
-    */
+   * This method inserts the element at the front of linked list
+   *
+   * @param newData -> Data to be Inserted
+   */
   def insertFront(newData: Int): Node = {
     if (head == null) {
       println(newData)
@@ -30,10 +30,10 @@ class doublyLinkedList {
   }
 
   /**
-    * This method inserts the element at last of linked list
-    *
-    * @param newData -> Data to be Inserted
-    */
+   * This method inserts the element at last of linked list
+   *
+   * @param newData -> Data to be Inserted
+   */
   def insertLast(newData: Int): Unit = {
     if (head == null) {
       println(newData)
@@ -51,11 +51,11 @@ class doublyLinkedList {
   }
 
   /**
-    * This method insert element after a given Node
-    *
-    * @param prevNode -> Previous node Data
-    * @param newData  -> Data to be Inserted
-    */
+   * This method insert element after a given Node
+   *
+   * @param prevNode -> Previous node Data
+   * @param newData  -> Data to be Inserted
+   */
   def insertAfterGivenNode(prevNode: Node, newData: Int): Unit = {
     if (prevNode == null) {
       println("The given previous node cannot be null")
@@ -70,8 +70,8 @@ class doublyLinkedList {
   }
 
   /**
-    * This method reverse the doubly linked list
-    */
+   * This method reverse the doubly linked list
+   */
   def reverseDoublyLinkedList(): Unit = {
     var temp: Node = null
     var curr = head
@@ -87,8 +87,8 @@ class doublyLinkedList {
   }
 
   /**
-    * This method deletes the front element of the linked list
-    */
+   * This method deletes the front element of the linked list
+   */
   def deleteFront(): Unit = {
     if (head == null) {
       println("Can't delete, Already empty")
@@ -99,8 +99,8 @@ class doublyLinkedList {
   }
 
   /**
-    * This method deletes the last element of the linked list
-    */
+   * This method deletes the last element of the linked list
+   */
   def deleteLast(): Unit = {
     if (head == null) {
       println("Head is empty, Can't proceed to delete")
@@ -114,10 +114,10 @@ class doublyLinkedList {
   }
 
   /**
-    * This method deletes the element after the key element
-    *
-    * @param key -> Key Element
-    */
+   * This method deletes the element after the key element
+   *
+   * @param key -> Key Element
+   */
   def deleteAfter(key: Int): Unit = {
     if (head == null) {
       println("Head is empty, Can't proceed to delete")
@@ -135,10 +135,10 @@ class doublyLinkedList {
   }
 
   /**
-    * This method search for key element in the linked list
-    *
-    * @param key -> Key element to be searched.
-    */
+   * This method search for key element in the linked list
+   *
+   * @param key -> Key element to be searched.
+   */
   def search(key: Int): Unit = {
     if (head == null) {
       println("Head can't be null")
@@ -153,8 +153,8 @@ class doublyLinkedList {
   }
 
   /**
-    * This method print the doubly linked list in reverse order
-    */
+   * This method print the doubly linked list in reverse order
+   */
   def printDoublyLinkedListInReverse(): Unit = {
     var tail: Node = head
     while (tail.next != null) {
@@ -168,8 +168,8 @@ class doublyLinkedList {
   }
 
   /**
-    * This method print the doubly linked list
-    */
+   * This method print the doubly linked list
+   */
   def printDoublyLinkedList(): Unit = {
     var temp: Node = head
 

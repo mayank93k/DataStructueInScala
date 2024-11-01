@@ -2,16 +2,16 @@ package DataStructures
 package DS.LinkedList
 
 /**
-  * About: Remove Duplicate Elements from the linked lists
-  */
+ * About: Remove Duplicate Elements from the linked lists
+ */
 class removeDuplicateFromLinkedList {
   var head: Node = _ // creating head of linked list and assigning its value as null
 
   /**
-    * This method remove the duplicate element from the linked list
-    *
-    * @param head -> Head of the Linked list
-    */
+   * This method remove the duplicate element from the linked list
+   *
+   * @param head -> Head of the Linked list
+   */
   def duplicateNode(head: Node): Unit = {
     var temp = head
     var temp1 = head
@@ -26,8 +26,8 @@ class removeDuplicateFromLinkedList {
   }
 
   /**
-    * Print the element of the linked list
-    */
+   * Print the element of the linked list
+   */
   def printList(head: Node): Unit = {
     var temp = head
     while (temp != null) {
@@ -37,10 +37,10 @@ class removeDuplicateFromLinkedList {
   }
 
   /**
-    * Insert the data at front of the linked list
-    *
-    * @param key -> Data to be Inserted
-    */
+   * Insert the data at front of the linked list
+   *
+   * @param key -> Data to be Inserted
+   */
   def newNode(key: Int): removeDuplicateFromLinkedList.this.Node = {
     val temp = new Node(key)
     temp

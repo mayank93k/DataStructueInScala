@@ -2,28 +2,28 @@ package DataStructures
 package DS.Trees
 
 import java.util
-import scala.collection.mutable.Stack
+import scala.collection.mutable.ListBuffer
 import scala.util.control.Breaks
 
 /**
-  * About: Various Tree Traversal Ways
-  *
-  * A binary tree can be traversed in various ways as below:
-  * 1) Spiral Traversal
-  * 2) Level By Level Traversal
-  * 3) Level Order Traversal
-  * 4) Level Order Traversal Left View
-  */
+ * About: Various Tree Traversal Ways
+ *
+ * A binary tree can be traversed in various ways as below:
+ * 1) Spiral Traversal
+ * 2) Level By Level Traversal
+ * 3) Level Order Traversal
+ * 4) Level Order Traversal Left View
+ */
 class treeTraversal {
   var root: Node = _ // creating root of tree and assigning its value as null
 
   /**
-    * This method insert a new key in Binary Tree
-    *
-    * @param root -> Root of the Tree
-    * @param key  -> Data to be Inserted
-    * @return ->  This method return the Node of tree
-    */
+   * This method insert a new key in Binary Tree
+   *
+   * @param root -> Root of the Tree
+   * @param key  -> Data to be Inserted
+   * @return ->  This method return the Node of tree
+   */
   def insert(root: Node, key: Int): treeTraversal.this.Node = {
     val loop1 = new Breaks
     if (root == null) {
@@ -52,38 +52,38 @@ class treeTraversal {
   }
 
   /**
-    * This method implements Level order traversal in spiral form
-    *
-    * @param root -> Root of the Tree
-    * @return -> returns the data in spiral form
-    */
+   * This method implements Level order traversal in spiral form
+   *
+   * @param root -> Root of the Tree
+   * @return -> returns the data in spiral form
+   */
   def spiralTraversal(root: Node): treeTraversal.this.Node = {
     val node: Node = root
-    val s1: Stack[Node] = new Stack[Node]()
-    val s2: Stack[Node] = new Stack[Node]()
-    s1.push(node)
+    val s1: ListBuffer[Node] = ListBuffer[Node]()
+    val s2: ListBuffer[Node] = ListBuffer[Node]()
+    s1.prepend(node)
     while (s1.nonEmpty || s2.nonEmpty) {
       while (s1.nonEmpty) {
-        val temp: Node = s1.top
-        s1.pop()
+        val temp: Node = s1.head
+        s1.remove(0)
         print(temp.data + " ")
 
         if (temp.right != null) {
-          s2.push(temp.right)
+          s2.prepend(temp.right)
         }
         if (temp.left != null) {
-          s2.push(temp.left)
+          s2.prepend(temp.left)
         }
       }
       while (s2.nonEmpty) {
-        val temp: Node = s2.top
-        s2.pop()
+        val temp: Node = s2.head
+        s2.remove(0)
         print(temp.data + " ")
         if (temp.left != null) {
-          s1.push(temp.left)
+          s1.prepend(temp.left)
         }
         if (temp.right != null) {
-          s1.push(temp.right)
+          s1.prepend(temp.right)
         }
       }
     }
@@ -91,11 +91,11 @@ class treeTraversal {
   }
 
   /**
-    * This method implements Level order traversal line by line
-    *
-    * @param root -> Root of the Tree
-    * @return -> return the data level by level
-    */
+   * This method implements Level order traversal line by line
+   *
+   * @param root -> Root of the Tree
+   * @return -> return the data level by level
+   */
   def levelByLevel(root: Node): treeTraversal.this.Node = {
     val node: Node = root
     if (node == null) {
@@ -125,11 +125,11 @@ class treeTraversal {
   }
 
   /**
-    * This method implements Level Order Tree Traversal
-    *
-    * @param root -> Root of the Tree
-    * @return -> return the data in level order
-    */
+   * This method implements Level Order Tree Traversal
+   *
+   * @param root -> Root of the Tree
+   * @return -> return the data in level order
+   */
   def levelOrderTraversal(root: Node): treeTraversal.this.Node = {
     val node: Node = root
     if (node == null) {
@@ -152,11 +152,11 @@ class treeTraversal {
   }
 
   /**
-    * This method implements Level Order Tree Traversal Left View
-    *
-    * @param root -> Root of the Tree
-    * @return -> return the data in which can be viewed from left side
-    */
+   * This method implements Level Order Tree Traversal Left View
+   *
+   * @param root -> Root of the Tree
+   * @return -> return the data in which can be viewed from left side
+   */
   def levelOrderTraversalLeftView(root: Node): treeTraversal.this.Node = {
     val node: Node = root
     if (node == null) {

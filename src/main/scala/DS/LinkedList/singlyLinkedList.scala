@@ -2,22 +2,22 @@ package DataStructures
 package DS.LinkedList
 
 /**
-  * About: Singly Linked List
-  *
-  * Linked List is a linear data structure. A linked list is represented by a pointer to the first node of the linked list.
-  * The first node is called the head. If the linked list is empty, then the value of the head is NULL.
-  * Each node in a list consists of at least two parts:
-  * 1) data
-  * 2) Pointer (Or Reference) to the next node
-  */
+ * About: Singly Linked List
+ *
+ * Linked List is a linear data structure. A linked list is represented by a pointer to the first node of the linked list.
+ * The first node is called the head. If the linked list is empty, then the value of the head is NULL.
+ * Each node in a list consists of at least two parts:
+ * 1) data
+ * 2) Pointer (Or Reference) to the next node
+ */
 class singlyLinkedList {
   var head: Node = _ // creating head of linked list and assigning its value as null
 
   /**
-    * Insert the data at front of the linked list
-    *
-    * @param new_data -> Data to be Inserted
-    */
+   * Insert the data at front of the linked list
+   *
+   * @param new_data -> Data to be Inserted
+   */
   def pushFront(new_data: Int): Node = {
     if (head == null) {
       println(new_data)
@@ -31,11 +31,11 @@ class singlyLinkedList {
   }
 
   /**
-    * Insert the data in between the nodes
-    *
-    * @param prev_node -> previous Node
-    * @param new_data  -> Data to be inserted
-    */
+   * Insert the data in between the nodes
+   *
+   * @param prev_node -> previous Node
+   * @param new_data  -> Data to be inserted
+   */
   def pushAfter(prev_node: Node, new_data: Int): Unit = {
     if (head == null) {
       println(new_data)
@@ -52,10 +52,10 @@ class singlyLinkedList {
   }
 
   /**
-    * Insert the data at the end of the linked list
-    *
-    * @param new_data -> Data to be Inserted
-    */
+   * Insert the data at the end of the linked list
+   *
+   * @param new_data -> Data to be Inserted
+   */
   def pushLast(new_data: Int): Unit = {
     if (head == null) {
       println(new_data)
@@ -73,8 +73,8 @@ class singlyLinkedList {
   }
 
   /**
-    * Print the element of the linked list
-    */
+   * Print the element of the linked list
+   */
   def printList(): Unit = {
     var temp = head
     while (temp != null) {
@@ -84,16 +84,16 @@ class singlyLinkedList {
   }
 
   /**
-    * Delete the entire linked list
-    * This method will drop the entire entry of linked list
-    */
+   * Delete the entire linked list
+   * This method will drop the entire entry of linked list
+   */
   def deleteLinkedList(): Unit = {
     head = null
   }
 
   /**
-    * Delete node at the front of the linked list, i.e., First node of the linked list
-    */
+   * Delete node at the front of the linked list, i.e., First node of the linked list
+   */
   def deleteFront(): Unit = {
     if (head == null) {
       println("Head can't be null")
@@ -104,8 +104,8 @@ class singlyLinkedList {
   }
 
   /**
-    * Delete node at the End of the linked list, i.e., Last node of the linked list
-    */
+   * Delete node at the End of the linked list, i.e., Last node of the linked list
+   */
   def deleteLast(): Unit = {
     if (head == null) {
       println("head can't be null")
@@ -123,10 +123,10 @@ class singlyLinkedList {
   }
 
   /**
-    * Delete the given element of the linked list, i.e., key node of the linked list
-    *
-    * @param key -> Element to be deleted
-    */
+   * Delete the given element of the linked list, i.e., key node of the linked list
+   *
+   * @param key -> Element to be deleted
+   */
   def deleteNode(key: Int): Unit = {
     var temp = head
     var prev: Node = null
@@ -142,10 +142,10 @@ class singlyLinkedList {
   }
 
   /**
-    * Delete node at the given key position of the linked list.
-    *
-    * @param position -> Element at this position to be deleted
-    */
+   * Delete node at the given key position of the linked list.
+   *
+   * @param position -> Element at this position to be deleted
+   */
   def keyPosition(position: Int): Unit = {
     var temp = head
     if (head == null) {
@@ -168,8 +168,8 @@ class singlyLinkedList {
   }
 
   /**
-    * Find Length/(count no of node) of a Linked List.
-    */
+   * Find Length/(count no of node) of a Linked List.
+   */
   def countNode(): Unit = {
     var count = 0
     var temp = head
@@ -181,10 +181,10 @@ class singlyLinkedList {
   }
 
   /**
-    * This method search an element in a Linked List
-    *
-    * @param key -> data element
-    */
+   * This method search an element in a Linked List
+   *
+   * @param key -> data element
+   */
   def searchElem(key: Int): Unit = {
     var temp = head
     while (temp != null) {
@@ -196,10 +196,10 @@ class singlyLinkedList {
   }
 
   /**
-    * Program for n’th node from the end of a Linked List
-    *
-    * @param key -> position of node from end of linked list(Hint: pos=no of nodes-(key+1))
-    */
+   * Program for n’th node from the end of a Linked List
+   *
+   * @param key -> position of node from end of linked list(Hint: pos=no of nodes-(key+1))
+   */
   def searchElemRev(key: Int): Unit = {
     var count1 = 0
     var temp1 = head
@@ -220,10 +220,10 @@ class singlyLinkedList {
   }
 
   /**
-    * This method to get the Nth node in a Linked List
-    *
-    * @param index -> position of node from start
-    */
+   * This method to get the Nth node in a Linked List
+   *
+   * @param index -> position of node from start
+   */
   def indexNode(index: Int): Unit = {
     var temp = head
     var count = 0
@@ -237,8 +237,8 @@ class singlyLinkedList {
   }
 
   /**
-    * Reverse a linked list
-    */
+   * Reverse a linked list
+   */
   def reverseNode(): Unit = {
     var currNode = head
     var prevNode: Node = null
@@ -253,8 +253,8 @@ class singlyLinkedList {
   }
 
   /**
-    * Find the middle element of a given linked list
-    */
+   * Find the middle element of a given linked list
+   */
   def midNode(): Unit = {
     var count1 = 0
     var temp1 = head
@@ -275,10 +275,10 @@ class singlyLinkedList {
   }
 
   /**
-    * Write a function that counts the number of times a given int occurs in a Linked List
-    *
-    * @param key -> Data which needs to checked for no of times repetition
-    */
+   * Write a function that counts the number of times a given int occurs in a Linked List
+   *
+   * @param key -> Data which needs to checked for no of times repetition
+   */
   def countDuplicateNode(key: Int): Unit = {
     var temp = head
     var count = 0

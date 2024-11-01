@@ -4,24 +4,24 @@ package DS.Trees
 import scala.util.control.Breaks
 
 /**
-  * About: Binary Tree
-  *
-  * A tree whose elements have at most 2 children is called a binary tree. Since each element in a binary tree can have only 2 children,
-  * we typically name them the left and right child.
-  * A tree is represented by a pointer to the topmost node in tree. If the tree is empty, then value of root is NULL.
-  * A Tree node contains following parts.
-  * 1. Data
-  * 2. Pointer to left child
-  * 3. Pointer to right child
-  */
+ * About: Binary Tree
+ *
+ * A tree whose elements have at most 2 children is called a binary tree. Since each element in a binary tree can have only 2 children,
+ * we typically name them the left and right child.
+ * A tree is represented by a pointer to the topmost node in tree. If the tree is empty, then value of root is NULL.
+ * A Tree node contains following parts.
+ * 1. Data
+ * 2. Pointer to left child
+ * 3. Pointer to right child
+ */
 class binaryTreeUsingIterativeMethod {
   var root: Node = _ // creating root of tree and assigning its value as null
 
   /**
-    * This utility method to do inorder traversal of BST
-    *
-    * @param root -> Data to be Inserted
-    */
+   * This utility method to do inorder traversal of BST
+   *
+   * @param root -> Data to be Inserted
+   */
   def inorder(root: Node): binaryTreeUsingIterativeMethod.this.Node = {
     if (root == null) {
       return null
@@ -32,12 +32,12 @@ class binaryTreeUsingIterativeMethod {
   }
 
   /**
-    * This method insert a new key in Binary Tree
-    *
-    * @param root -> Root of the Tree
-    * @param key  -> Data to be Inserted
-    * @return ->  This method return the Node of tree
-    */
+   * This method insert a new key in Binary Tree
+   *
+   * @param root -> Root of the Tree
+   * @param key  -> Data to be Inserted
+   * @return ->  This method return the Node of tree
+   */
   def insert(root: Node, key: Int): binaryTreeUsingIterativeMethod.this.Node = {
     val loop1 = new Breaks
     if (root == null) {
@@ -67,12 +67,12 @@ class binaryTreeUsingIterativeMethod {
   }
 
   /**
-    * This method searches the key element in the Binary Tree
-    *
-    * @param root -> Root of the tree
-    * @param key  -> Data to be searched
-    * @return -> Return the searched element
-    */
+   * This method searches the key element in the Binary Tree
+   *
+   * @param root -> Root of the tree
+   * @param key  -> Data to be searched
+   * @return -> Return the searched element
+   */
   def search(root: Node, key: Int): Boolean = {
     if (root == null) {
       false

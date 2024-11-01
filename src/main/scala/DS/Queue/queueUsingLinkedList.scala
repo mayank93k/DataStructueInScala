@@ -2,25 +2,25 @@ package DataStructures
 package DS.Queue
 
 /**
-  * About:QueueUsingLinkedList
-  *
-  * The major problem with the queue implemented using an array is, It will work for an only fixed number of data values.
-  * That means, the array size must be specified at the beginning itself.
-  * Queue using an array is not suitable when we don't know the size of data which we are going to use.
-  * A queue data structure can be implemented using a linked list data structure.
-  * The Queue implemented using linked list can organize as many data values as we want.
-  *
-  * In linked list implementation of a queue, the last inserted node is always pointed by 'rear'
-  * and the first node is always pointed by 'front'.
-  */
+ * About:QueueUsingLinkedList
+ *
+ * The major problem with the queue implemented using an array is, It will work for an only fixed number of data values.
+ * That means, the array size must be specified at the beginning itself.
+ * Queue using an array is not suitable when we don't know the size of data which we are going to use.
+ * A queue data structure can be implemented using a linked list data structure.
+ * The Queue implemented using linked list can organize as many data values as we want.
+ *
+ * In linked list implementation of a queue, the last inserted node is always pointed by 'rear'
+ * and the first node is always pointed by 'front'.
+ */
 class queueUsingLinkedList {
   var head: Node = _ // Creating head of linked list and assigning its value as null
 
   /**
-    * Push element at the end(rear) of the Queue i.e., element is always inserted at the rear of linked list
-    *
-    * @param new_data -> Data to be Inserted at Queue
-    */
+   * Push element at the end(rear) of the Queue i.e., element is always inserted at the rear of linked list
+   *
+   * @param new_data -> Data to be Inserted at Queue
+   */
   def pushQueueRear(new_data: Int): Unit = {
     if (head == null) {
       println(new_data)
@@ -37,8 +37,8 @@ class queueUsingLinkedList {
   }
 
   /**
-    * Pop element at the front of the Queue i.e., element is always deleted at the front of linked list
-    */
+   * Pop element at the front of the Queue i.e., element is always deleted at the front of linked list
+   */
   def popQueueFront(): Unit = {
     if (head == null) {
       println("head can't be null")
@@ -49,8 +49,8 @@ class queueUsingLinkedList {
   }
 
   /**
-    * This method is to print element of linked list.
-    */
+   * This method is to print element of linked list.
+   */
   def printNode(): Unit = {
     var temp = head
     while (temp != null) {

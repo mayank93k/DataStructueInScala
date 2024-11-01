@@ -4,19 +4,19 @@ package DS.LinkedList
 import scala.collection.mutable
 
 /**
-  * About: Detect loop and Count Node
-  *
-  * We have to detect the loop in the given linked list. If the loop exists then count the number of Nodes in the loop.
-  */
+ * About: Detect loop and Count Node
+ *
+ * We have to detect the loop in the given linked list. If the loop exists then count the number of Nodes in the loop.
+ */
 class detectLoopAndCountNodeInLinkedList {
   var head: Node = _ // creating head of linked list and assigning its value as null
 
   /**
-    * This method checks if the linked list has loop or not
-    *
-    * @param head -> Head node
-    * @return -> Returns true if loop exists else false
-    */
+   * This method checks if the linked list has loop or not
+   *
+   * @param head -> Head node
+   * @return -> Returns true if loop exists else false
+   */
   def checkLoop(head: Node): Boolean = {
     val s1: mutable.HashSet[Node] = new mutable.HashSet[Node]
     var temp = head
@@ -31,11 +31,11 @@ class detectLoopAndCountNodeInLinkedList {
   }
 
   /**
-    * This method checks if loop is present then returns count of nodes in loop
-    *
-    * @param head -> Head node
-    * @return -> This method returns the count of  Nodes if loop exists
-    */
+   * This method checks if loop is present then returns count of nodes in loop
+   *
+   * @param head -> Head node
+   * @return -> This method returns the count of  Nodes if loop exists
+   */
   def countLoop(head: Node): Any = {
     var slow = head
     var fast = head
@@ -49,11 +49,11 @@ class detectLoopAndCountNodeInLinkedList {
   }
 
   /**
-    * This method count of nodes in loop
-    *
-    * @param n -> Head node
-    * @return -> This method returns the count of  Nodes
-    */
+   * This method count of nodes in loop
+   *
+   * @param n -> Head node
+   * @return -> This method returns the count of  Nodes
+   */
   def countNode(n: Node): Unit = {
     var count = 1
     var temp = n
@@ -65,10 +65,10 @@ class detectLoopAndCountNodeInLinkedList {
   }
 
   /**
-    * This method is used to print the list
-    *
-    * @param head -> Head node
-    */
+   * This method is used to print the list
+   *
+   * @param head -> Head node
+   */
   def printList(head: Node): Unit = {
     var temp = head
     while (temp != null) {
@@ -78,11 +78,11 @@ class detectLoopAndCountNodeInLinkedList {
   }
 
   /**
-    * This method is used to create New Nodes
-    *
-    * @param key -> Element to be inserted in node
-    * @return -> Return Node
-    */
+   * This method is used to create New Nodes
+   *
+   * @param key -> Element to be inserted in node
+   * @return -> Return Node
+   */
   def newNode(key: Int): detectLoopAndCountNodeInLinkedList.this.Node = {
     val temp = new Node(key)
     temp

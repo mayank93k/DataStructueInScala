@@ -5,10 +5,10 @@ class convertBinarySearchTreeToBalanceBinarySearchTree {
   var root: Node = _ // creating root of tree and assigning its value as null
 
   /**
-    * This utility method to do inorder traversal of BST
-    *
-    * @param root -> Data to be Inserted
-    */
+   * This utility method to do inorder traversal of BST
+   *
+   * @param root -> Data to be Inserted
+   */
   def inOrder(root: Node): convertBinarySearchTreeToBalanceBinarySearchTree.this.Node = {
     if (root == null) {
       return null
@@ -19,10 +19,10 @@ class convertBinarySearchTreeToBalanceBinarySearchTree {
   }
 
   /**
-    * This utility method to do preOrder traversal of BST
-    *
-    * @param root -> Data to be Inserted
-    */
+   * This utility method to do preOrder traversal of BST
+   *
+   * @param root -> Data to be Inserted
+   */
   def preOrder(root: Node): convertBinarySearchTreeToBalanceBinarySearchTree.this.Node = {
     if (root == null) {
       return null
@@ -33,12 +33,12 @@ class convertBinarySearchTreeToBalanceBinarySearchTree {
   }
 
   /**
-    * This method insert a new key in BST
-    *
-    * @param root -> Root of the tree
-    * @param key  -> Data to be inserted
-    * @return -> This method return the Node of tree
-    */
+   * This method insert a new key in BST
+   *
+   * @param root -> Root of the tree
+   * @param key  -> Data to be inserted
+   * @return -> This method return the Node of tree
+   */
   def insert(root: Node, key: Int): convertBinarySearchTreeToBalanceBinarySearchTree.this.Node = {
     if (root == null) {
       return new Node(key)
@@ -53,13 +53,13 @@ class convertBinarySearchTreeToBalanceBinarySearchTree {
   }
 
   /**
-    * This method convert BST(Binary Search Tree) to Balance Binary Search Tree
-    *
-    * @param nodes -> Array element
-    * @param start -> Start index of Array
-    * @param end   -> End index of Array
-    * @return -> Return BalancedBinarySearchTree
-    */
+   * This method convert BST(Binary Search Tree) to Balance Binary Search Tree
+   *
+   * @param nodes -> Array element
+   * @param start -> Start index of Array
+   * @param end   -> End index of Array
+   * @return -> Return BalancedBinarySearchTree
+   */
   def convertBSTtoBalancedBST(nodes: Array[Int], start: Int, end: Int): convertBinarySearchTreeToBalanceBinarySearchTree.this.Node = {
     if (start > end) {
       return null

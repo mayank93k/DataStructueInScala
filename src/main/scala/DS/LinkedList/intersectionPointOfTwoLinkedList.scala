@@ -4,17 +4,17 @@ package DS.LinkedList
 import scala.util.control._
 
 /**
-  * About: Find intersection point of  two Linked List
-  *
-  * We have to find the intersection point of two Linked List(Common Node where two linked list meets each other)
-  */
+ * About: Find intersection point of  two Linked List
+ *
+ * We have to find the intersection point of two Linked List(Common Node where two linked list meets each other)
+ */
 class intersectionPointOfTwoLinkedList {
   /**
-    * This method is used to find the intersectionPoint of Two linked list
-    *
-    * @param head1 -> Head node
-    * @param head2 -> Head node
-    */
+   * This method is used to find the intersectionPoint of Two linked list
+   *
+   * @param head1 -> Head node
+   * @param head2 -> Head node
+   */
   def intersect(head1: Node, head2: Node): Unit = {
     var count1 = 0
     var temp1 = head1
@@ -51,11 +51,11 @@ class intersectionPointOfTwoLinkedList {
   }
 
   /**
-    * This method is used to create New Nodes
-    *
-    * @param key -> Element to be inserted in node
-    * @return -> Return Node
-    */
+   * This method is used to create New Nodes
+   *
+   * @param key -> Element to be inserted in node
+   * @return -> Return Node
+   */
   def newNode(key: Int): intersectionPointOfTwoLinkedList.this.Node = {
     val temp = new Node(key)
     temp

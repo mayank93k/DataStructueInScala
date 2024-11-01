@@ -2,14 +2,14 @@ package DataStructures
 package DS.Queue
 
 /**
-  * About: Queue Implementation
-  *
-  * A Queue is a linear structure which follows a particular order in which the operations are performed.
-  * The order is First In First Out (FIFO).
-  * Ex: Any queue of consumers for a resource where the consumer that came first is served first.
-  * The difference between stacks and queues is in removing.
-  * In a stack we remove the item the most recently added where as in a queue, we remove the item the least recently added.
-  */
+ * About: Queue Implementation
+ *
+ * A Queue is a linear structure which follows a particular order in which the operations are performed.
+ * The order is First In First Out (FIFO).
+ * Ex: Any queue of consumers for a resource where the consumer that came first is served first.
+ * The difference between stacks and queues is in removing.
+ * In a stack we remove the item the most recently added where as in a queue, we remove the item the least recently added.
+ */
 class queueImplementation {
   var n = 5 // Size of Queue
   var queue: Array[Int] = new Array[Int](n) // empty array
@@ -17,8 +17,8 @@ class queueImplementation {
   private var rear: Int = -1 // No element in Queue
 
   /**
-    * Get top most element of the queue
-    */
+   * Get top most element of the queue
+   */
   def peek: Int = {
     val peek = queue(front + 1)
     println("Top element of queue is: " + peek)
@@ -26,8 +26,8 @@ class queueImplementation {
   }
 
   /**
-    * Return size of Queue
-    */
+   * Return size of Queue
+   */
   def size: Int = {
     val size = queue.length
     println("Size of queue is: " + size)
@@ -35,10 +35,10 @@ class queueImplementation {
   }
 
   /**
-    * This method which pushes the data into Queue through rear end
-    *
-    * @param data -> Data to be Inserted
-    */
+   * This method which pushes the data into Queue through rear end
+   *
+   * @param data -> Data to be Inserted
+   */
   def enqueue(data: Int): Unit = {
     if (isFull) {
       println("Queue overflow")
@@ -52,10 +52,10 @@ class queueImplementation {
   }
 
   /**
-    * Check weather Queue is full or not.
-    *
-    * @return true or false
-    */
+   * Check weather Queue is full or not.
+   *
+   * @return true or false
+   */
   private def isFull: Boolean = {
     if (rear == n - 1) {
       true
@@ -65,8 +65,8 @@ class queueImplementation {
   }
 
   /**
-    * This method deletes the data from Quw=eue from front end
-    */
+   * This method deletes the data from Quw=eue from front end
+   */
   def dequeue(): Unit = {
     if (isEmpty) {
       println("Queue underflow")
@@ -80,10 +80,10 @@ class queueImplementation {
   }
 
   /**
-    * Check weather Queue is empty or not
-    *
-    * @return true or false
-    */
+   * Check weather Queue is empty or not
+   *
+   * @return true or false
+   */
   def isEmpty: Boolean = {
     if (front < -1 || front > rear) {
       true

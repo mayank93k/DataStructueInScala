@@ -2,24 +2,24 @@ package DataStructures
 package DS.Trees
 
 /**
-  * About: Binary Search Tree (Implemented using recursive method)
-  *
-  * Binary Search Tree, is a node-based binary tree data structure which has the following properties:
-  * The left subtree of a node contains only nodes with keys lesser than the node’s key.
-  * The right subtree of a node contains only nodes with keys greater than the node’s key.
-  * The left and right subtree each must also be a binary search tree.
-  * There must be no duplicate nodes.
-  * The above properties of Binary Search Tree provide an ordering among keys so that the operations like search,
-  * minimum and maximum can be done fast. If there is no ordering, then we may have to compare every key to search a given key.
-  */
+ * About: Binary Search Tree (Implemented using recursive method)
+ *
+ * Binary Search Tree, is a node-based binary tree data structure which has the following properties:
+ * The left subtree of a node contains only nodes with keys lesser than the node’s key.
+ * The right subtree of a node contains only nodes with keys greater than the node’s key.
+ * The left and right subtree each must also be a binary search tree.
+ * There must be no duplicate nodes.
+ * The above properties of Binary Search Tree provide an ordering among keys so that the operations like search,
+ * minimum and maximum can be done fast. If there is no ordering, then we may have to compare every key to search a given key.
+ */
 class binarySearchTreeUsingRecursiveMethod {
   var root: Node = _ // creating root of tree and assigning its value as null
 
   /**
-    * This utility method to do inorder traversal of BST
-    *
-    * @param root -> Data to be Inserted
-    */
+   * This utility method to do inorder traversal of BST
+   *
+   * @param root -> Data to be Inserted
+   */
   def inOrder(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
     if (root == null)
       return null
@@ -29,10 +29,10 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This utility method to do preOrder traversal of BST
-    *
-    * @param root -> Data to be Inserted
-    */
+   * This utility method to do preOrder traversal of BST
+   *
+   * @param root -> Data to be Inserted
+   */
   def preOrder(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
     if (root == null)
       return root
@@ -42,12 +42,12 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method insert a new key in BST
-    *
-    * @param root -> Root of the tree
-    * @param key  -> Data to be inserted
-    * @return -> This method return the Node of tree
-    */
+   * This method insert a new key in BST
+   *
+   * @param root -> Root of the tree
+   * @param key  -> Data to be inserted
+   * @return -> This method return the Node of tree
+   */
   def insert(root: Node, key: Int): binarySearchTreeUsingRecursiveMethod.this.Node = {
     if (root == null) {
       return new Node(key)
@@ -61,12 +61,12 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method searches the key element in the BST
-    *
-    * @param root -> Root of the tree
-    * @param key  -> Data to be searched
-    * @return -> Return the searched element
-    */
+   * This method searches the key element in the BST
+   *
+   * @param root -> Root of the tree
+   * @param key  -> Data to be searched
+   * @return -> Return the searched element
+   */
   def search(root: Node, key: Int): String = {
     if (root == null) {
       return "No"
@@ -80,12 +80,12 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method deletes the node
-    *
-    * @param root -> Root of the tree
-    * @param key  -> Data to be Deleted
-    * @return
-    */
+   * This method deletes the node
+   *
+   * @param root -> Root of the tree
+   * @param key  -> Data to be Deleted
+   * @return
+   */
   def deleteNode(root: Node, key: Int): binarySearchTreeUsingRecursiveMethod.this.Node = {
     if (root == null) {
       return root
@@ -112,11 +112,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method fetches the maximum value in the node
-    *
-    * @param root -> Root of the tree
-    * @return -> Return the maximum element
-    */
+   * This method fetches the maximum value in the node
+   *
+   * @param root -> Root of the tree
+   * @return -> Return the maximum element
+   */
   def maximumNodeValue(root: Node): Int = {
     var max: Node = root
     while (max.right != null) {
@@ -126,11 +126,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method fetches the minimum key in the node
-    *
-    * @param root -> Root of the tree
-    * @return -> Return the minimum element
-    */
+   * This method fetches the minimum key in the node
+   *
+   * @param root -> Root of the tree
+   * @return -> Return the minimum element
+   */
   def minimumNodeValue(root: Node): Int = {
     var min: Node = root
     while (min.left != null) {
@@ -140,11 +140,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method size(Level) of tree
-    *
-    * @param root -> Root of the tree
-    * @return -> Return the size of tree
-    */
+   * This method size(Level) of tree
+   *
+   * @param root -> Root of the tree
+   * @return -> Return the size of tree
+   */
   def sizeOfTree(root: Node): Int = {
     if (root == null) {
       0
@@ -155,11 +155,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method count the number of left node in a tree
-    *
-    * @param root -> Root of the tree
-    * @return -> Return the number of right nodes
-    */
+   * This method count the number of left node in a tree
+   *
+   * @param root -> Root of the tree
+   * @return -> Return the number of right nodes
+   */
   def numberOfLeftNode(root: Node): Int = {
     if (root == null) {
       return 0
@@ -172,11 +172,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method count the number of right nodes
-    *
-    * @param root -> Root of the tree
-    * @return -> Return the number of right nodes
-    */
+   * This method count the number of right nodes
+   *
+   * @param root -> Root of the tree
+   * @return -> Return the number of right nodes
+   */
   def numberOfRightNode(root: Node): Int = {
     if (root == null) {
       return 0
@@ -189,11 +189,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method gives the root value
-    *
-    * @param root -> Root of the tree
-    * @return -> Return the root Data
-    */
+   * This method gives the root value
+   *
+   * @param root -> Root of the tree
+   * @return -> Return the root Data
+   */
   def rootData(root: Node): Int = {
     if (root == null) {
       0
@@ -203,11 +203,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method return the height of Binary Tree
-    *
-    * @param root -> Root of the tree
-    * @return -> Return the height of Binary Tree
-    */
+   * This method return the height of Binary Tree
+   *
+   * @param root -> Root of the tree
+   * @return -> Return the height of Binary Tree
+   */
   def heightOfBinaryTree(root: Node): Int = {
     var leftHeight = 0
     var rightHeight = 0
@@ -227,11 +227,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method returns the number of leaves in a tree
-    *
-    * @param root -> Root of the tree
-    * @return -> return the number of leaves
-    */
+   * This method returns the number of leaves in a tree
+   *
+   * @param root -> Root of the tree
+   * @return -> return the number of leaves
+   */
   def numberOfLeaves(root: Node): Int = {
     if (root == null) {
       return 0
@@ -244,13 +244,13 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method check that tree is Binary Search Tree
-    *
-    * @param root -> Root of the tree
-    * @param min  -> Minimum value of tree
-    * @param max  -> Maximum value of tree
-    * @return -> Returns true if tree is BST else false
-    */
+   * This method check that tree is Binary Search Tree
+   *
+   * @param root -> Root of the tree
+   * @param min  -> Minimum value of tree
+   * @param max  -> Maximum value of tree
+   * @return -> Returns true if tree is BST else false
+   */
   def checkBST(root: Node, min: Int, max: Int): Boolean = {
     if (root == null) {
       return true
@@ -263,11 +263,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method swap left and right node of the tree
-    *
-    * @param root -> Root of the tree
-    * @return -> Returns the tree after swapping left and right node
-    */
+   * This method swap left and right node of the tree
+   *
+   * @param root -> Root of the tree
+   * @return -> Returns the tree after swapping left and right node
+   */
   def swapNodes(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
     if (root != null) {
       swapNodes(root.left)
@@ -280,11 +280,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method returns the sum of all nodes of the tree
-    *
-    * @param root -> Root of the tree
-    * @return -> Returns the sum of all nodes in a tree
-    */
+   * This method returns the sum of all nodes of the tree
+   *
+   * @param root -> Root of the tree
+   * @return -> Returns the sum of all nodes in a tree
+   */
   def addNodeValue(root: Node): Int = {
     if (root == null) {
       0
@@ -295,11 +295,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method returns the number of full node(Node which is having both left and right node as child)
-    *
-    * @param root -> Root of the tree
-    * @return -> Returns the number of Full Node
-    */
+   * This method returns the number of full node(Node which is having both left and right node as child)
+   *
+   * @param root -> Root of the tree
+   * @return -> Returns the number of Full Node
+   */
   def numberOfFullNodes(root: Node): Int = {
     if (root == null) {
       return 0
@@ -313,10 +313,10 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This utility method to do postOrder traversal of BST
-    *
-    * @param root -> Data to be Inserted
-    */
+   * This utility method to do postOrder traversal of BST
+   *
+   * @param root -> Data to be Inserted
+   */
   private def postOrder(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
     if (root == null)
       return root
@@ -327,11 +327,11 @@ class binarySearchTreeUsingRecursiveMethod {
   }
 
   /**
-    * This method fetches the maximum key in the node
-    *
-    * @param root -> Root of the tree
-    * @return -> Return the maximum element
-    */
+   * This method fetches the maximum key in the node
+   *
+   * @param root -> Root of the tree
+   * @return -> Return the maximum element
+   */
   private def maximumKey(root: Node): binarySearchTreeUsingRecursiveMethod.this.Node = {
     var max: Node = root
     while (max.right != null) {

@@ -1,40 +1,39 @@
 package DataStructures
 package DS.Graph
 
-import scala.collection.mutable
-import scala.collection.mutable.{ArrayBuffer, Stack}
+import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 
 /**
-  * About: Graph Data Structure
-  *
-  * A Graph is a non-linear data structure consisting of nodes and edges.
-  * The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph.
-  * Example:
-  * Graphs are used to represent networks. The networks may include paths in a city or telephone network or circuit network.
-  * Graphs are also used in social networks like linkedIn, Facebook. For example, in Facebook, each person is represented with a vertex(or node).
-  * Each node is a structure and contains information like person id, name, gender, locale etc.
-  */
+ * About: Graph Data Structure
+ *
+ * A Graph is a non-linear data structure consisting of nodes and edges.
+ * The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph.
+ * Example:
+ * Graphs are used to represent networks. The networks may include paths in a city or telephone network or circuit network.
+ * Graphs are also used in social networks like linkedIn, Facebook. For example, in Facebook, each person is represented with a vertex(or node).
+ * Each node is a structure and contains information like person id, name, gender, locale etc.
+ */
 class graphBFSandDFSImplementation {
 
   /**
-    * This method to add an edge into the graph
-    *
-    * @param graph -> Graph Node
-    * @param src   -> Source node
-    * @param dest  -> Destination Node
-    */
+   * This method to add an edge into the graph
+   *
+   * @param graph -> Graph Node
+   * @param src   -> Source node
+   * @param dest  -> Destination Node
+   */
   def addEdge(graph: Graph, src: Int, dest: Int): Unit = {
     graph.adjListArray(src).append(dest)
     graph.adjListArray(dest).append(src)
   }
 
   /**
-    * This method prints BFS traversal from a given source s
-    *
-    * @param s     -> Source Node
-    * @param v     -> No of Vertex
-    * @param graph -> Graph Node
-    */
+   * This method prints BFS traversal from a given source s
+   *
+   * @param s     -> Source Node
+   * @param v     -> No of Vertex
+   * @param graph -> Graph Node
+   */
   def BFS(s: Int, v: Int, graph: Graph): Unit = {
     val visited: Array[Boolean] = new Array[Boolean](v)
     val queue: java.util.Queue[Int] = new java.util.LinkedList[Int]()
@@ -55,11 +54,11 @@ class graphBFSandDFSImplementation {
   }
 
   /**
-    * The method to do DFS traversal. It uses recursive DFSUtil()
-    *
-    * @param v     -> No of Vertex
-    * @param graph -> Graph Node
-    */
+   * The method to do DFS traversal. It uses recursive DFSUtil()
+   *
+   * @param v     -> No of Vertex
+   * @param graph -> Graph Node
+   */
   def DFS(v: Int, graph: Graph): Unit = {
     val visited: Array[Boolean] = new Array[Boolean](v)
     for (i <- 0 until v)
@@ -71,18 +70,18 @@ class graphBFSandDFSImplementation {
   }
 
   /**
-    * This method is used by DFS
-    *
-    * @param i       -> Counter Variable
-    * @param visited -> Array contains the visited node
-    * @param graph   -> Graph Node
-    */
+   * This method is used by DFS
+   *
+   * @param i       -> Counter Variable
+   * @param visited -> Array contains the visited node
+   * @param graph   -> Graph Node
+   */
   private def DFSUtil(i: Int, visited: Array[Boolean], graph: Graph): Unit = {
-    val stack: Stack[Int] = new mutable.Stack[Int]()
-    stack.push(i)
+    val stack: ListBuffer[Int] = ListBuffer[Int]()
+    stack.prepend(i)
     while (stack.nonEmpty) {
-      val s = stack.top
-      stack.pop()
+      val s = stack.head
+      stack.remove(0)
 
       if (!visited(s)) {
         print(s + " ")
@@ -92,17 +91,17 @@ class graphBFSandDFSImplementation {
       while (j.hasNext) {
         val n = j.next()
         if (!visited(n)) {
-          stack.push(n)
+          stack.prepend(n)
         }
       }
     }
   }
 
   /**
-    * This method is used to print all the nodes of the graph
-    *
-    * @param graph -> Graph Node
-    */
+   * This method is used to print all the nodes of the graph
+   *
+   * @param graph -> Graph Node
+   */
   def printGraph(graph: Graph): Unit = {
     for (v <- 0 until graph.V) {
       println("Adjacency List of Vertex " + v)
