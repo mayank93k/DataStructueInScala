@@ -1,4 +1,7 @@
-# Project : Data Structures
+# Data Structures in Scala
+
+### A project showcasing the implementation of various data structures in Scala, including arrays, linked lists, stacks, queues, trees and more. This project demonstrates the fundamentals of data structures and their efficient usage in solving computational problems.
+    
     Data Structures in scala
 ---------------------------------------------------
 
