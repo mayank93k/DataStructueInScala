@@ -1,4 +1,4 @@
-name := "DataStructures"
+name := "Data Structures in Scala"
 
 version := "0.1"
 
